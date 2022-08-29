@@ -8,8 +8,8 @@ namespace Politica.Persistence
     public class PoliticaDbContext : DbContext, IPoliticaDbContext
     {
         public DbSet<Fraction> Fractions { get; set; }
-        public DbSet<Player> Players { get; set; }
         public DbSet<Union> Unions { get; set; }
+        public DbSet<Player> Players { get; set; }
 
         public PoliticaDbContext(DbContextOptions<PoliticaDbContext> options)
             : base(options) { }
@@ -18,6 +18,7 @@ namespace Politica.Persistence
         {
             builder.ApplyConfiguration(new FractionConfiguration());
             builder.ApplyConfiguration(new UnionConfiguration());
+            builder.ApplyConfiguration(new PlayerConfiguration());
             base.OnModelCreating(builder);
         }
     }

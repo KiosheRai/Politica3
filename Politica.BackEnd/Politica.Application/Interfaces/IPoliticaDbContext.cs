@@ -9,6 +9,7 @@ namespace Politica.Application.Interfaces
     {
         DbSet<Fraction> Fractions { get; set; }
         DbSet<Union> Unions { get; set; }
+        DbSet<Player> Players { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

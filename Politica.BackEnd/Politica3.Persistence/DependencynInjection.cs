@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Politica.Application.Interfaces;
 
 namespace Politica.Persistence
 {
@@ -14,7 +15,7 @@ namespace Politica.Persistence
             {
                 options.UseSqlServer(connectionString);
             });
-            services.AddScoped<PoliticaDbContext>(provider =>
+            services.AddScoped<IPoliticaDbContext>(provider =>
                 provider.GetService<PoliticaDbContext>());
             return services;
         }

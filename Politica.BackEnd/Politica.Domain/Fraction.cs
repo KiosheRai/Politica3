@@ -11,5 +11,7 @@ namespace Politica.Domain
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
         public virtual IEnumerable<Player> ListPlayers { get; set; }
+        public virtual Union Association { get; set; }
+        public bool IsDeleted { get; set; }
     }
 }

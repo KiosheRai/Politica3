@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Politica.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Politica.Persistence.EntityTypeConfigurations
 {
@@ -15,8 +10,10 @@ namespace Politica.Persistence.EntityTypeConfigurations
         {
             builder.HasKey(player => player.Id);
             builder.HasIndex(player => player.Id).IsUnique();
-            builder.Property(player => player.Name).HasMaxLength(50);
-            //builder.Property(player => player.AssociationId).IsOptional();
+            builder.Property(player => player.Name).HasMaxLength(50).IsRequired();
+            builder.Property(player => player.Habit).IsRequired();
+            builder.Property(player => player.HabitId).IsRequired();
+            builder.Property(player => player.IsDeleted).HasDefaultValue(false);
         }
     }
 }

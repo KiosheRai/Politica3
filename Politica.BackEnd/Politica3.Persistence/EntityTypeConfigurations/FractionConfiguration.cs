@@ -10,7 +10,10 @@ namespace Politica.Persistence.EntityTypeConfigurations
         {
             builder.HasKey(fraction => fraction.Id);
             builder.HasIndex(fraction => fraction.Id).IsUnique();
-            builder.Property(fraction => fraction.Title).HasMaxLength(50);
+            builder.Property(fraction => fraction.Title).HasMaxLength(50).IsRequired();
+            builder.Property(fraction => fraction.Description).IsRequired();
+            builder.Property(fraction => fraction.Coordinates).IsRequired();
+            builder.Property(fraction => fraction.IsDeleted).HasDefaultValue(false);
         }
     }
 }
