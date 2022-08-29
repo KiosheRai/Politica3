@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Politica.Domain
 {
-    public class Fraction
+    public class Union
     {
         public Guid Id { get; set; }
         public string Title { get; set; }
