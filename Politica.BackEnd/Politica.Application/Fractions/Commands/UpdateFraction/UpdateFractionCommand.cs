@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using MediatR;
+using Politica.Domain;
 
 namespace Politica.Application.Fractions.Commands.UpdateFraction
 {
@@ -9,6 +11,6 @@ namespace Politica.Application.Fractions.Commands.UpdateFraction
         public string Title { get; set; }
         public string Description { get; set; }
         public string Coordinates { get; set; }
-        public virtual Guid OwnerId { get; set; }
+        public Guid OwnerId { get; set; }
     }
 }

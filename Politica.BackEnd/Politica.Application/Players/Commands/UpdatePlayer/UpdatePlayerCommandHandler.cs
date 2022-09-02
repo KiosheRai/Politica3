@@ -29,6 +29,7 @@ namespace Politica.Application.Players.Commands.UpdatePlayer
 
             entity.Name = request.Name;
             entity.NickChangeDate = DateTime.Now;
+            
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

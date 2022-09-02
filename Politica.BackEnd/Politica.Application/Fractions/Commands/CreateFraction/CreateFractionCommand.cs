@@ -11,6 +11,6 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Player> ListPlayers { get; set; }
+        public virtual IEnumerable<Guid> ListPlayers { get; set; }
     }
 }

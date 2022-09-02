@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Politica.Domain\Politica.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Fractions\Queries\" />
-  </ItemGroup>
-
 </Project>

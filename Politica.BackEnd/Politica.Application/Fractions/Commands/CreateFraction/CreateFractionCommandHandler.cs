@@ -4,6 +4,10 @@ using Politica.Application.Interfaces;
 using MediatR;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
+using Politica.Application.Common.Exceptions;
+using Microsoft.EntityFrameworkCore;
 
 namespace Politica.Application.Fractions.Commands.CreateFraction
 {
@@ -19,6 +23,16 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
         public async Task<Guid> Handle(CreateFractionCommand request,
             CancellationToken cancellationToken)
         {
+            var players = await _dbContext.Players
+                .ToListAsync(cancellationToken);
+
+            IEnumerable<Player> entities = new List<Player>();
+
+            foreach (var playerId in request.ListPlayers)
+            {
+                entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId));
+            }
+
             var entity = new Fraction
             {
                 Id = Guid.NewGuid(),
@@ -26,7 +40,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
                 Description = request.Description,
                 Coordinates = request.Coordinates,
                 OwnerId = request.OwnerId,
-                ListPlayers = request.ListPlayers,
+                ListPlayers = entities,
                 Association = null,
                 IsDeleted = false
             };

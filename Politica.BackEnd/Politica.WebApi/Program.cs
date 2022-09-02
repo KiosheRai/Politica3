@@ -17,10 +17,10 @@ namespace Politica.WebApi
             {
                 var serviceProvider = scope.ServiceProvider;
                 var context = serviceProvider.GetRequiredService<PoliticaDbContext>();
-                DbInitializer.Initialize(context);
+                
                 try
                 {
-                    
+                    DbInitializer.Initialize(context);
                 }
                 catch (Exception exception)
                 {

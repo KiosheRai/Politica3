@@ -2,10 +2,6 @@
 using Politica.Application.Common.Mappings;
 using Politica.Domain;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Politica.Application.Players.Queries.GetPlayerList
 {
