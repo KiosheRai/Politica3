@@ -66,7 +66,7 @@ namespace Politica.WebApi.Controllers
             return NoContent();
         }
 
-        [HttpPatch("{Id}")]
+        [HttpPatch]
         //[Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

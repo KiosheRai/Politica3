@@ -1,7 +1,10 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Politica.Application.Common.Exceptions;
 using Politica.Application.Interfaces;
 using Politica.Domain;
 using System;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -19,6 +22,18 @@ namespace Politica.Application.Players.Commands.CreatePlayer
         public async Task<Guid> Handle(CreatePlayerCommand request,
             CancellationToken cancellationToken)
         {
+            var inviteid = await _dbContext.Players
+                    .FirstOrDefaultAsync(x => x.Id == request.InvitedId);
+
+            if (request.InvitedId != null && inviteid == null)
+                throw new NotFoundException(nameof(Player), request.InvitedId);
+
+            var exists = await  _dbContext.Players
+                .FirstOrDefaultAsync(x => x.HabitId == request.HabitId);
+
+            if (exists != null)
+                throw new AlreadyExistsException(nameof(Player), request.HabitId);
+
             var player = new Player
             {
                 Id = Guid.NewGuid(),

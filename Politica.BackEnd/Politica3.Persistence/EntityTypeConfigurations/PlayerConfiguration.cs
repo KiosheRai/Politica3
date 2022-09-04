@@ -12,7 +12,7 @@ namespace Politica.Persistence.EntityTypeConfigurations
             builder.HasIndex(player => player.Id).IsUnique();
             builder.Property(player => player.Name).HasMaxLength(50).IsRequired();
             builder.Property(player => player.Habit).IsRequired();
-            builder.Property(player => player.HabitId).IsRequired();
+            builder.HasIndex(player => player.HabitId).IsUnique();
             builder.Property(player => player.IsDeleted).HasDefaultValue(false);
         }
     }
