@@ -31,20 +31,20 @@ namespace Politica.Application.Fractions.Commands.UpdatePlayers
             if (fraction == null)
                 throw new NotFoundException(nameof(Fraction), request.Id);
 
-            if(request.ListPlayers == null)
+            if(request.Players == null)
             {
-                fraction.ListPlayers = null;
+                fraction.Players = null;
                 return Unit.Value;
             }
 
             IEnumerable<Player> entities = new List<Player>();
 
-            foreach(var playerId in request.ListPlayers)
+            foreach(var playerId in request.Players)
             {
                entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId)) ;
             }
 
-            fraction.ListPlayers = entities;
+            fraction.Players = entities;
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;

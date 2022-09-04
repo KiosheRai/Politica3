@@ -28,7 +28,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
 
             IEnumerable<Player> entities = new List<Player>();
 
-            foreach (var playerId in request.ListPlayers)
+            foreach (var playerId in request.Players)
             {
                 entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId));
             }
@@ -40,7 +40,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
                 Description = request.Description,
                 Coordinates = request.Coordinates,
                 OwnerId = request.OwnerId,
-                ListPlayers = entities,
+                Players = entities,
                 Association = null,
                 IsDeleted = false
             };

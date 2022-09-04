@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using MediatR;
-using Politica.Domain;
+﻿using MediatR;
+using System;
 
 namespace Politica.Application.Fractions.Commands.UpdateFraction
 {

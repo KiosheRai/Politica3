@@ -13,7 +13,7 @@ namespace Politica.Application.Unions.Queries.GetUnionDetails
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Fraction> ListFractions { get; set; }
+        public virtual IEnumerable<Fraction> Fractions { get; set; }
         public bool IsDeleted { get; set; }
 
         public void Mapping(Profile profile)
@@ -29,8 +29,8 @@ namespace Politica.Application.Unions.Queries.GetUnionDetails
                 opt => opt.MapFrom(eve => eve.Coordinates))
                 .ForMember(t => t.OwnerId,
                 opt => opt.MapFrom(eve => eve.OwnerId))
-                .ForMember(t => t.ListFractions,
-                opt => opt.MapFrom(eve => eve.ListFractions))
+                .ForMember(t => t.Fractions,
+                opt => opt.MapFrom(eve => eve.Fractions))
                 .ForMember(t => t.IsDeleted,
                 opt => opt.MapFrom(eve => eve.IsDeleted));
         }

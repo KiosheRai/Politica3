@@ -10,7 +10,7 @@ namespace Politica.Domain
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Fraction> ListFractions { get; set; }
+        public virtual IEnumerable<Fraction> Fractions { get; set; }
         public bool IsDeleted { get; set; }
     }
 }

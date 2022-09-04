@@ -13,7 +13,7 @@ namespace Politica.Application.Fractions.Queries.GetFractionDetails
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Player> ListPlayers { get; set; }
+        public virtual IEnumerable<Player> Players { get; set; }
         public virtual Union Association { get; set; }
         public bool IsDeleted { get; set; }
 
@@ -30,8 +30,8 @@ namespace Politica.Application.Fractions.Queries.GetFractionDetails
                 opt => opt.MapFrom(eve => eve.Coordinates))
                 .ForMember(t => t.OwnerId,
                 opt => opt.MapFrom(eve => eve.OwnerId))
-                .ForMember(t => t.ListPlayers,
-                opt => opt.MapFrom(eve => eve.ListPlayers))
+                .ForMember(t => t.Players,
+                opt => opt.MapFrom(eve => eve.Players))
                 .ForMember(t => t.Association,
                 opt => opt.MapFrom(eve => eve.Association))
                 .ForMember(t => t.IsDeleted,

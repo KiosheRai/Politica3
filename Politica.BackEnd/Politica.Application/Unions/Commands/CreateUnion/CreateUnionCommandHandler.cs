@@ -28,7 +28,7 @@ namespace Politica.Application.Unions.Commands.CreateUnion
 
             IEnumerable<Fraction> entities = new List<Fraction>();
 
-            foreach (var fractionId in request.ListFractions)
+            foreach (var fractionId in request.Fractions)
             {
                 entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
                     ?? throw new NotFoundException(nameof(Fraction), fractionId));
@@ -40,7 +40,7 @@ namespace Politica.Application.Unions.Commands.CreateUnion
                 Title = request.Title,
                 Description = request.Description,
                 Coordinates = request.Coordinates,
-                ListFractions = fractions,
+                Fractions = fractions,
                 OwnerId = request.OwnerId,
                 IsDeleted = false
             };

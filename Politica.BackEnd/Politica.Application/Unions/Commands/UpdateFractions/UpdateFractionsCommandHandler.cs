@@ -37,7 +37,7 @@ namespace Politica.Application.Unions.Commands.UpdateFractions
                     ?? throw new NotFoundException(nameof(Fraction), fractionId));
             }
 
-            union.ListFractions = entities;
+            union.Fractions = entities;
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

@@ -10,6 +10,6 @@ namespace Politica.Application.Unions.Commands.CreateUnion
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Guid> ListFractions { get; set; }
+        public virtual IEnumerable<Guid> Fractions { get; set; }
     }
 }

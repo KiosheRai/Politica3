@@ -10,7 +10,7 @@ namespace Politica.Domain
         public string Description { get; set; }
         public string Coordinates { get; set; }
         public virtual Guid OwnerId { get; set; }
-        public virtual IEnumerable<Player> ListPlayers { get; set; }
+        public virtual IEnumerable<Player> Players { get; set; }
         public virtual Union Association { get; set; }
         public bool IsDeleted { get; set; }
     }
