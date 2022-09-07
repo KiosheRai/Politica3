@@ -5,6 +5,7 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Politica.Application.Common.Exceptions;
+using Politica.Domain;
 
 namespace Politica.Application.Players.Commands.UpdatePlayer
 {
@@ -23,8 +24,12 @@ namespace Politica.Application.Players.Commands.UpdatePlayer
                 await _dbContext.Players.FirstOrDefaultAsync(player => player.Id == request.Id, cancellationToken);
 
             if(entity == null)
-            {
-                throw new NotFoundException(nameof(Players), request.Id);
+                throw new NotFoundException(nameof(Player), request.Id);
+
+            TimeSpan? timespan = DateTime.Now - entity.NickChangeDate;
+            if (timespan is TimeSpan time) {
+                if (time < TimeSpan.FromHours(24))
+                    throw new ChangeNickTimeException(nameof(Player), request.Id, time);
             }
 
             entity.Name = request.Name;

@@ -5,6 +5,7 @@ using AutoMapper;
 using System.Threading;
 using AutoMapper.QueryableExtensions;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace Politica.Application.Fractions.Queries.GetFractionList
 {
@@ -22,6 +23,7 @@ namespace Politica.Application.Fractions.Queries.GetFractionList
         {
             var Query = await _dbContext.Players
                 .ProjectTo<FractionLookUpDto>(_mapper.ConfigurationProvider)
+                .Where(x => x.IsDeleted == false)
                 .ToListAsync(cancellationToken);
 
             return new FractionListVm { Fractions = Query };

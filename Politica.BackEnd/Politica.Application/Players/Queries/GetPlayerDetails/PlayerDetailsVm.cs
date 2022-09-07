@@ -15,6 +15,7 @@ namespace Politica.Application.Players.Queries.GetPlayerDetails
         public DateTime? NickChangeDate { get; set; }
         public virtual Fraction Association { get; set; }
         public bool IsDeleted { get; set; }
+        public object Title { get; set; }
 
         public void Mapping(Profile profile)
         {

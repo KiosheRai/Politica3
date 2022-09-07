@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Politica.Domain", "Politica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Politica.Persistence", "Politica3.Persistence\Politica.Persistence.csproj", "{0526741C-7AB2-4364-97C9-9D0E066E2389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Politica.WebApi", "Politica.WebApi\Politica.WebApi.csproj", "{5A0FE621-D221-4BE0-833F-6A4CD7073DED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Politica.WebApi", "Politica.WebApi\Politica.WebApi.csproj", "{5A0FE621-D221-4BE0-833F-6A4CD7073DED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Politica.Test", "Politica.Test\Politica.Test.csproj", "{591E17F1-E726-4870-AE2A-9480ECE4CF26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{5A0FE621-D221-4BE0-833F-6A4CD7073DED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A0FE621-D221-4BE0-833F-6A4CD7073DED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A0FE621-D221-4BE0-833F-6A4CD7073DED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{591E17F1-E726-4870-AE2A-9480ECE4CF26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{591E17F1-E726-4870-AE2A-9480ECE4CF26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{591E17F1-E726-4870-AE2A-9480ECE4CF26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{591E17F1-E726-4870-AE2A-9480ECE4CF26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +56,7 @@ Global
 		{30DF4261-2438-4728-9A58-E107E91C60F2} = {7425251A-A573-4D18-882B-1DAAC648703E}
 		{0526741C-7AB2-4364-97C9-9D0E066E2389} = {3E4FEE54-8C77-4164-833F-25E1F29310F7}
 		{5A0FE621-D221-4BE0-833F-6A4CD7073DED} = {264C7881-6376-48BC-B423-3CC3D6DF881A}
+		{591E17F1-E726-4870-AE2A-9480ECE4CF26} = {35D692AF-5C3A-479D-9802-397802F60B2E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D92AF83C-7024-43DA-A722-6D7B000D52C4}

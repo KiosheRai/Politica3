@@ -4,6 +4,6 @@ namespace Politica.Application.Players.Queries.GetPlayerList
 {
     public class PlayerListVm
     {
-        public IList<PlayerLookUpDto> Events { get; set; }
+        public IList<PlayerLookUpDto> Players { get; set; }
     }
 }

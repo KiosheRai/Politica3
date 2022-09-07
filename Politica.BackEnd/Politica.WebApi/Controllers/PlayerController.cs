@@ -60,7 +60,8 @@ namespace Politica.WebApi.Controllers
         //[Authorize]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        public async Task<ActionResult> Update([FromBody] UpdateFractionDto updatePlayerDto)
+        [ProducesResponseType(409)]
+        public async Task<ActionResult> Update([FromBody] UpdatePlayerDto updatePlayerDto)
         {
             var command = _mapper.Map<UpdatePlayerCommand>(updatePlayerDto);
             //command.Id = UserId;

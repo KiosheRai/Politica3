@@ -24,7 +24,7 @@ namespace Politica.Application.Players.Queries.GetPlayerList
                 .ProjectTo<PlayerLookUpDto>(_mapper.ConfigurationProvider)
                 .ToListAsync(cancellationToken);
 
-            return new PlayerListVm { Events = Query };
+            return new PlayerListVm { Players = Query };
         }
     }
 

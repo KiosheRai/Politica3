@@ -3,6 +3,7 @@ using AutoMapper.QueryableExtensions;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Politica.Application.Interfaces;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -22,6 +23,7 @@ namespace Politica.Application.Unions.Queries.GetUnionList
         {
             var Query = await _dbContext.Players
                 .ProjectTo<UnionLookUpDto>(_mapper.ConfigurationProvider)
+                .Where(x => x.IsDeleted == false)
                 .ToListAsync(cancellationToken);
 
             return new UnionListVm { Unions = Query };

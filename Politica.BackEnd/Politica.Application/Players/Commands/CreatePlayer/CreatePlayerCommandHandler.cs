@@ -28,7 +28,7 @@ namespace Politica.Application.Players.Commands.CreatePlayer
             if (request.InvitedId != null && inviteid == null)
                 throw new NotFoundException(nameof(Player), request.InvitedId);
 
-            var exists = await  _dbContext.Players
+            var exists = await _dbContext.Players
                 .FirstOrDefaultAsync(x => x.HabitId == request.HabitId);
 
             if (exists != null)

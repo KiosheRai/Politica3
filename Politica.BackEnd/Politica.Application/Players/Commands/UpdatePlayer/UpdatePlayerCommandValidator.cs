@@ -10,7 +10,7 @@ namespace Politica.Application.Players.Commands.UpdatePlayer
             RuleFor(UpdatePlayerCommand =>
                    UpdatePlayerCommand.Id).NotEqual(Guid.Empty);
             RuleFor(UpdatePlayerCommand =>
-                    UpdatePlayerCommand.Name).Empty();
+                    UpdatePlayerCommand.Name).NotEmpty();
         }
     }
 }
