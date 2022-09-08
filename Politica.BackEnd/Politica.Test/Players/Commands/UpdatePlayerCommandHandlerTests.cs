@@ -2,10 +2,6 @@
 using Politica.Application.Common.Exceptions;
 using Politica.Application.Players.Commands.UpdatePlayer;
 using Politica.Test.Common;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Xunit;

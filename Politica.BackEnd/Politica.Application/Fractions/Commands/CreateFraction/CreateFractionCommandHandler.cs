@@ -28,10 +28,18 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
 
             IEnumerable<Player> entities = new List<Player>();
 
-            foreach (var playerId in request.Players)
+            if (request.Players != null)
             {
-                entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId));
+                foreach (var playerId in request.Players)
+                {
+                    entities.Append(players.FirstOrDefault(x => x.Id == playerId)
+                        ?? throw new NotFoundException(nameof(Player), playerId));
+                }
             }
+
+            var OwnerId = _dbContext.Players.
+                FirstOrDefaultAsync(x => x.Id == request.OwnerId) 
+                    ?? throw new NotFoundException(nameof(Player), request.OwnerId);
 
             var entity = new Fraction
             {

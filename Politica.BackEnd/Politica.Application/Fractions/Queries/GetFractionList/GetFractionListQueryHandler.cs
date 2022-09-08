@@ -21,7 +21,7 @@ namespace Politica.Application.Fractions.Queries.GetFractionList
         public async Task<FractionListVm> Handle(GetFractionListQuery request,
             CancellationToken cancellationToken)
         {
-            var Query = await _dbContext.Players
+            var Query = await _dbContext.Fractions
                 .ProjectTo<FractionLookUpDto>(_mapper.ConfigurationProvider)
                 .Where(x => x.IsDeleted == false)
                 .ToListAsync(cancellationToken);

@@ -5,6 +5,7 @@ using MediatR;
 using System.Threading.Tasks;
 using System.Threading;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Politica.Application.Fractions.Commands.DeleteFraction
 {
@@ -31,6 +32,11 @@ namespace Politica.Application.Fractions.Commands.DeleteFraction
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
+        }
+
+        public Task Handle(DeleteFractionCommand deleteFractionCommand, object none)
+        {
+            throw new NotImplementedException();
         }
     }
 }

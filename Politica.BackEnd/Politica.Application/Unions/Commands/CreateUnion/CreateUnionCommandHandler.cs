@@ -28,10 +28,13 @@ namespace Politica.Application.Unions.Commands.CreateUnion
 
             IEnumerable<Fraction> entities = new List<Fraction>();
 
-            foreach (var fractionId in request.Fractions)
+            if (request.Fractions != null)
             {
-                entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
-                    ?? throw new NotFoundException(nameof(Fraction), fractionId));
+                foreach (var fractionId in request.Fractions)
+                {
+                    entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
+                        ?? throw new NotFoundException(nameof(Fraction), fractionId));
+                }
             }
 
             var union = new Union

@@ -15,7 +15,12 @@ namespace Politica.Test.Common
         public static Guid PlayerFractionOwner = Guid.NewGuid();
         public static Guid PlayerForDetails = Guid.NewGuid();
 
+        public static Guid PlayerOne = Guid.NewGuid();
+        public static Guid FractionForDelete = Guid.NewGuid();
+        public static Guid FractionForUpdate = Guid.NewGuid();
+
         public static Guid FractionForAccessPlayer = Guid.NewGuid();
+        public static Guid FractionForDetails = Guid.NewGuid();
 
         public static DateTime NickChangeDate = DateTime.Now;
 
@@ -82,6 +87,17 @@ namespace Politica.Test.Common
                     Association = null,
                     NickChangeDate = NickChangeDate,
                     IsDeleted = false,
+                },
+                new Player
+                {
+                    Id = PlayerOne,
+                    Name = "PlayerOne",
+                    Habit = "VK",
+                    HabitId = 767256,
+                    InvitedId = null,
+                    Association = null,
+                    NickChangeDate = null,
+                    IsDeleted = false,
                 }
              );
 
@@ -92,6 +108,39 @@ namespace Politica.Test.Common
                     Title = "Вейшнория",
                     Description = "Описание",
                     Coordinates = "123 123",
+                    Association = null,
+                    OwnerId = PlayerFractionOwner,
+                    Players = null,
+                    IsDeleted = false
+                },
+                new Fraction
+                {
+                    Id = FractionForDelete,
+                    Title = "FractionForDelete",
+                    Description = "Описание",
+                    Coordinates = "123 123",
+                    Association = null,
+                    OwnerId = PlayerFractionOwner,
+                    Players = null,
+                    IsDeleted = false
+                },
+                new Fraction
+                {
+                    Id = FractionForUpdate,
+                    Title = "FractionForDelete",
+                    Description = "Описание",
+                    Coordinates = "123 123",
+                    Association = null,
+                    OwnerId = PlayerFractionOwner,
+                    Players = null,
+                    IsDeleted = false
+                },
+                new Fraction
+                {
+                    Id = FractionForDetails,
+                    Title = "FractionForDetails",
+                    Description = "Описание",
+                    Coordinates = "1232 123",
                     Association = null,
                     OwnerId = PlayerFractionOwner,
                     Players = null,

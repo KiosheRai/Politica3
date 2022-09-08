@@ -23,19 +23,20 @@ namespace Politica.Application.Fractions.Commands.UpdateFraction
                 await _dbContext.Fractions.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
 
             if(entity == null)
-            {
                 throw new NotFoundException(nameof(Fraction), request.Id);
-            }
+
+            var OwnerId = await _dbContext.Players
+                .FirstOrDefaultAsync(x=>x.Id == request.OwnerId)
+                    ?? throw new NotFoundException(nameof(Player), request.OwnerId);
 
             entity.Title = request.Title;
             entity.Description = request.Description;
             entity.Coordinates = request.Coordinates;
-            entity.OwnerId = request.OwnerId;
+            entity.OwnerId = OwnerId.Id;
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 
             return Unit.Value;
         }
-        
     }
 }

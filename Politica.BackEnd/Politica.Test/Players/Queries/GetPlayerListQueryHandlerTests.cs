@@ -35,7 +35,7 @@ namespace Politica.Test.Players.Queries
 
             //Assert 
             result.ShouldBeOfType<PlayerListVm>();
-            result.Players.Count.ShouldBe(5);
+            result.Players.Count.ShouldBe(6);
         }
     }
 }
