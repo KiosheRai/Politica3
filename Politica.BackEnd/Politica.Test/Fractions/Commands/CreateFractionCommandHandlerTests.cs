@@ -104,5 +104,32 @@ namespace Politica.Test.Fractions.Commands
                 CancellationToken.None);
             });
         }
+
+        [Fact]
+        public async Task CreateFractionCommandHandler_FailOnWrongOwnerId()
+        {
+            //Arrange
+            var handler = new CreateFractionCommandHandler(context);
+            var Title = "Орден креста";
+            var Description = "Описание";
+            var Coordinates = "2 2";
+
+            //Act
+
+            //Assert
+            await Assert.ThrowsAsync<NotFoundException>(async () =>
+            {
+                await handler.Handle(
+                    new CreateFractionCommand
+                    {
+                        Title = Title,
+                        Description = Description,
+                        Coordinates = Coordinates,
+                        OwnerId = Guid.NewGuid(),
+                        Players = null,
+                    },
+                CancellationToken.None);
+            });
+        }
     }
 }

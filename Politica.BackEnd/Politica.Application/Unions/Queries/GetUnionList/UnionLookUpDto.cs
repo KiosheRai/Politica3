@@ -1,10 +1,11 @@
 ﻿using AutoMapper;
+using Politica.Application.Common.Mappings;
 using Politica.Domain;
 using System;
 
 namespace Politica.Application.Unions.Queries.GetUnionList
 {
-    public class UnionLookUpDto
+    public class UnionLookUpDto : IMapWith<Union>
     {
         public Guid Id { get; set; }
         public string Title { get; set; }

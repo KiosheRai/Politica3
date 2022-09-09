@@ -37,7 +37,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
                 }
             }
 
-            var OwnerId = _dbContext.Players.
+            var owner = await _dbContext.Players.
                 FirstOrDefaultAsync(x => x.Id == request.OwnerId) 
                     ?? throw new NotFoundException(nameof(Player), request.OwnerId);
 
@@ -47,7 +47,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
                 Title = request.Title,
                 Description = request.Description,
                 Coordinates = request.Coordinates,
-                OwnerId = request.OwnerId,
+                OwnerId = owner.Id,
                 Players = entities,
                 Association = null,
                 IsDeleted = false

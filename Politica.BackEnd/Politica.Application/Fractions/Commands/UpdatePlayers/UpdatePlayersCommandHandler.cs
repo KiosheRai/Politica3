@@ -23,25 +23,20 @@ namespace Politica.Application.Fractions.Commands.UpdatePlayers
             CancellationToken cancellationToken)
         {
             var fraction = await _dbContext.Fractions
-                .FirstOrDefaultAsync(x => x.Id == request.Id);
+                .FirstOrDefaultAsync(x => x.Id == request.Id)
+                    ?? throw new NotFoundException(nameof(Fraction), request.Id);
 
             var players = await _dbContext.Players
                 .ToListAsync(cancellationToken);
 
-            if (fraction == null)
-                throw new NotFoundException(nameof(Fraction), request.Id);
-
-            if(request.Players == null)
-            {
-                fraction.Players = null;
-                return Unit.Value;
-            }
-
             IEnumerable<Player> entities = new List<Player>();
 
-            foreach(var playerId in request.Players)
+            if (request.Players != null)
             {
-               entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId)) ;
+                foreach (var playerId in request.Players)
+                {
+                    entities.Append(players.FirstOrDefault(x => x.Id == playerId) ?? throw new NotFoundException(nameof(Player), playerId));
+                }
             }
 
             fraction.Players = entities;

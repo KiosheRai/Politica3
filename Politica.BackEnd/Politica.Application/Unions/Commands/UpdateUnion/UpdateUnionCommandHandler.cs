@@ -24,15 +24,17 @@ namespace Politica.Application.Unions.Commands.UpdateUnion
             CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Unions
-                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Union), request.Id);
 
-            if (entity == null)
-                throw new NotFoundException(nameof(Union), request.Id);
+            var owner = await _dbContext.Players.
+              FirstOrDefaultAsync(x => x.Id == request.OwnerId)
+                  ?? throw new NotFoundException(nameof(Player), request.OwnerId);
 
             entity.Title = request.Title;
             entity.Description = request.Description;
             entity.Coordinates = request.Coordinates;
-            entity.OwnerId = request.OwnerId;
+            entity.OwnerId = owner.Id;
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

@@ -20,12 +20,8 @@ namespace Politica.Application.Players.Commands.DeletePlayer
             CancellationToken cancellationToken)
         {
             var entity = await _dbContext.Players
-                .FirstOrDefaultAsync(player => player.Id == request.UserId, cancellationToken);
-
-            if (entity == null)
-            {
-                throw new NotFoundException(nameof(Player), request.UserId);
-            }
+                .FirstOrDefaultAsync(player => player.Id == request.UserId, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Player), request.UserId);
 
             entity.IsDeleted = true;
             await _dbContext.SaveChangesAsync(cancellationToken);

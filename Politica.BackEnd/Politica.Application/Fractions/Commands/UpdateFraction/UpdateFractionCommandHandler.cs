@@ -19,11 +19,9 @@ namespace Politica.Application.Fractions.Commands.UpdateFraction
         public async Task<Unit> Handle(UpdateFractionCommand request,
             CancellationToken cancellationToken)
         {
-            var entity =
-                await _dbContext.Fractions.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
-
-            if(entity == null)
-                throw new NotFoundException(nameof(Fraction), request.Id);
+            var entity = await _dbContext.Fractions
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Fraction), request.Id);
 
             var OwnerId = await _dbContext.Players
                 .FirstOrDefaultAsync(x=>x.Id == request.OwnerId)

@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Politica.Application.Common.Exceptions;
-using Politica.Application.Fractions.Commands.UpdatePlayers;
+using Politica.Application.Unions.Commands.UpdateFractions;
 using Politica.Test.Common;
 using System;
 using System.Collections.Generic;
@@ -8,45 +8,45 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Politica.Test.Fractions.Commands
+namespace Politica.Test.Unions.Commands
 {
-    public class UpdatePlayersCommandHandlerTests : TestCommandBase
+    public class UpdateFractionsCommandHandlerTests : TestCommandBase
     {
         [Fact]
         public async Task UpdateFractionCommandHandler_Success()
         {
             //Arrange
-            var handler = new UpdatePlayersCommandHandler(context);
+            var handler = new UpdateFractionsCommandHandler(context);
 
             //Act
             await handler.Handle(
-                new UpdatePlayersCommand
+                new UpdateFractionsCommand
                 {
-                    Id = PoliticaContextFactory.FractionForUpdate,
-                    Players = null
+                    Id = PoliticaContextFactory.UnionForDelete,
+                    Fractions = null
                 },
                 CancellationToken.None);
 
             //Assert
-            Assert.Empty((await context.Fractions.SingleOrDefaultAsync(x =>
-                x.Id == PoliticaContextFactory.FractionForUpdate)).Players);
+            Assert.Empty((await context.Unions.SingleOrDefaultAsync(x =>
+                x.Id == PoliticaContextFactory.UnionForDelete)).Fractions);
         }
 
         [Fact]
         public async Task UpdateFractionCommandHandler_FailonWrongId()
         {
             //Arrange
-            var handler = new UpdatePlayersCommandHandler(context);
+            var handler = new UpdateFractionsCommandHandler(context);
 
             //Act
 
             //Assert
-            await Assert.ThrowsAsync<NotFoundException>(async () => 
+            await Assert.ThrowsAsync<NotFoundException>(async () =>
                 await handler.Handle(
-                   new UpdatePlayersCommand
+                   new UpdateFractionsCommand
                    {
                        Id = Guid.NewGuid(),
-                       Players = null
+                       Fractions = null
                    },
                 CancellationToken.None));
         }
@@ -55,19 +55,17 @@ namespace Politica.Test.Fractions.Commands
         public async Task UpdateFractionCommandHandler_FailonPlayerId()
         {
             //Arrange
-            var handler = new UpdatePlayersCommandHandler(context);
-
-
+            var handler = new UpdateFractionsCommandHandler(context);
 
             //Act
 
             //Assert
             await Assert.ThrowsAsync<NotFoundException>(async () =>
                 await handler.Handle(
-                   new UpdatePlayersCommand
+                   new UpdateFractionsCommand
                    {
                        Id = Guid.NewGuid(),
-                       Players = new List<Guid>() { Guid.NewGuid() }
+                       Fractions = new List<Guid>() { Guid.NewGuid() }
                    },
                 CancellationToken.None));
         }

@@ -37,6 +37,10 @@ namespace Politica.Application.Unions.Commands.CreateUnion
                 }
             }
 
+            var owner = await _dbContext.Players.
+               FirstOrDefaultAsync(x => x.Id == request.OwnerId)
+                   ?? throw new NotFoundException(nameof(Player), request.OwnerId);
+
             var union = new Union
             {
                 Id = Guid.NewGuid(),
@@ -44,7 +48,7 @@ namespace Politica.Application.Unions.Commands.CreateUnion
                 Description = request.Description,
                 Coordinates = request.Coordinates,
                 Fractions = fractions,
-                OwnerId = request.OwnerId,
+                OwnerId = owner.Id,
                 IsDeleted = false
             };
 

@@ -21,7 +21,7 @@ namespace Politica.Application.Unions.Queries.GetUnionList
         public async Task<UnionListVm> Handle(GetUnionListQuery request,
             CancellationToken cancellationToken)
         {
-            var Query = await _dbContext.Players
+            var Query = await _dbContext.Unions
                 .ProjectTo<UnionLookUpDto>(_mapper.ConfigurationProvider)
                 .Where(x => x.IsDeleted == false)
                 .ToListAsync(cancellationToken);

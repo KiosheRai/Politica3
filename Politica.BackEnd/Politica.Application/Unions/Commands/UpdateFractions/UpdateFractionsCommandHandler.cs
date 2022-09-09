@@ -22,19 +22,21 @@ namespace Politica.Application.Unions.Commands.UpdateFractions
             CancellationToken cancellationToken)
         {
             var union = await _dbContext.Unions
-                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+                .FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Union), request.Id); ;
 
-            var fractions = await _dbContext.Fractions.ToListAsync(cancellationToken);
-
-            if (union == null)
-                throw new NotFoundException(nameof(Union), request.Id);
+            var fractions = await _dbContext.Fractions
+                .ToListAsync(cancellationToken);
 
             IEnumerable<Fraction> entities = new List<Fraction>();
 
-            foreach (var fractionId in request.Fractions)
+            if (request.Fractions != null)
             {
-                entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId) 
-                    ?? throw new NotFoundException(nameof(Fraction), fractionId));
+                foreach (var fractionId in request.Fractions)
+                {
+                    entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
+                        ?? throw new NotFoundException(nameof(Fraction), fractionId));
+                }
             }
 
             union.Fractions = entities;

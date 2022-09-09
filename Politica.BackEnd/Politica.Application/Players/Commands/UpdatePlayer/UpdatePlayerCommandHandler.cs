@@ -20,11 +20,9 @@ namespace Politica.Application.Players.Commands.UpdatePlayer
         public async Task<Unit> Handle(UpdatePlayerCommand request, 
             CancellationToken cancellationToken)
         {
-            var entity =
-                await _dbContext.Players.FirstOrDefaultAsync(player => player.Id == request.Id, cancellationToken);
-
-            if(entity == null)
-                throw new NotFoundException(nameof(Player), request.Id);
+            var entity = await _dbContext.Players
+                .FirstOrDefaultAsync(player => player.Id == request.Id, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Player), request.Id);
 
             TimeSpan? timespan = DateTime.Now - entity.NickChangeDate;
             if (timespan is TimeSpan time) {

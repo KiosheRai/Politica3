@@ -22,6 +22,10 @@ namespace Politica.Test.Common
         public static Guid FractionForAccessPlayer = Guid.NewGuid();
         public static Guid FractionForDetails = Guid.NewGuid();
 
+        public static Guid UnionForDelete = Guid.NewGuid();
+        public static Guid UnionForUpdate = Guid.NewGuid();
+        public static Guid UnionForDetails = Guid.NewGuid();
+
         public static DateTime NickChangeDate = DateTime.Now;
 
         public static PoliticaDbContext Create()
@@ -148,7 +152,41 @@ namespace Politica.Test.Common
                 }
                 );
 
-           context.SaveChanges();
+            context.Unions.AddRange(
+                new Union
+                {
+                    Id = UnionForDelete,
+                    Title = "Союз",
+                    Description = "Описание",
+                    Coordinates = "123 123",
+                    OwnerId = PlayerFractionOwner,
+                    Fractions = null,
+                    IsDeleted = false
+                },
+                new Union
+                {
+                    Id = UnionForUpdate,
+                    Title = "Союз",
+                    Description = "Описание",
+                    Coordinates = "123 123",
+                    OwnerId = PlayerFractionOwner,
+                    Fractions = null,
+                    IsDeleted = false
+                },
+                new Union
+                {
+                    Id = UnionForDetails,
+                    Title = "UnionForDetails",
+                    Description = "Описание",
+                    Coordinates = "321 312",
+                    OwnerId = PlayerFractionOwner,
+                    Fractions = null,
+                    IsDeleted = false
+                }
+                );
+
+
+            context.SaveChanges();
             return context;
         }
 

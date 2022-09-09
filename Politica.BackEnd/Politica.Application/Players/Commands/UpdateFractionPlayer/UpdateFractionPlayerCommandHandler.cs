@@ -20,15 +20,14 @@ namespace Politica.Application.Players.Commands.UpdateFractionPlayer
             CancellationToken cancellationToken)
         {
             var entityPlayer = await _dbContext.Players
-                .FirstOrDefaultAsync(player => player.Id == request.Id);
+                .FirstOrDefaultAsync(player => player.Id == request.Id)
+                    ?? throw new NotFoundException(nameof(Player), request.Id);
 
             var entityFraction = await _dbContext.Fractions
                 .FirstOrDefaultAsync(fraction => fraction.Id == request.Association);
 
-            if(entityPlayer == null)
-                throw new NotFoundException(nameof(Player), request.Id);
-
-            entityPlayer.Association = entityFraction ?? throw new NotFoundException(nameof(Fraction), request.Association);
+            entityPlayer.Association = entityFraction 
+                ?? throw new NotFoundException(nameof(Fraction), request.Association);
 
             await _dbContext.SaveChangesAsync(cancellationToken);
 

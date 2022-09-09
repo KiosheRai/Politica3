@@ -21,12 +21,8 @@ namespace Politica.Application.Fractions.Commands.DeleteFraction
             CancellationToken cancellationToken)
         {
             var entity = 
-                await _dbContext.Fractions.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
-
-            if(entity == null)
-            {
-                throw new NotFoundException(nameof(Fraction), request.Id);
-            }
+                await _dbContext.Fractions.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken)
+                    ?? throw new NotFoundException(nameof(Fraction), request.Id);
 
             entity.IsDeleted = true;
             await _dbContext.SaveChangesAsync(cancellationToken);
