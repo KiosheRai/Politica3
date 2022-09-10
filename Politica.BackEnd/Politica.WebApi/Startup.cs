@@ -31,6 +31,16 @@ namespace Politica.WebApi
             services.AppPersistence(Configuration);
             services.AddControllers();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: "Politica", policy =>
+                {
+                    policy.WithOrigins("http://localhost:4200")
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
+                });
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Politica.WebApi", Version = "v1" });
@@ -50,8 +60,10 @@ namespace Politica.WebApi
             app.UseRouting();
             app.UseHttpsRedirection();
 
-            app.UseAuthorization();
+            app.UseCors("Politica");
 
+            app.UseAuthorization();
+           
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
