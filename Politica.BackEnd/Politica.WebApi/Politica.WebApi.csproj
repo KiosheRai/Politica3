@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Politica.Application\Politica.Application.csproj" />
     <ProjectReference Include="..\Politica3.Persistence\Politica.Persistence.csproj" />
   </ItemGroup>

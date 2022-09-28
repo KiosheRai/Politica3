@@ -14,12 +14,12 @@ namespace Politica.Persistence
         public PoliticaDbContext(DbContextOptions<PoliticaDbContext> options)
             : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.ApplyConfiguration(new FractionConfiguration());
-            builder.ApplyConfiguration(new UnionConfiguration());
-            builder.ApplyConfiguration(new PlayerConfiguration());
-            base.OnModelCreating(builder);
+            modelBuilder.ApplyConfiguration(new FractionConfiguration());
+            modelBuilder.ApplyConfiguration(new UnionConfiguration());
+            modelBuilder.ApplyConfiguration(new PlayerConfiguration());
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

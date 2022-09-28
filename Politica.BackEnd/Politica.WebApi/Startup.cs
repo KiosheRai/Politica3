@@ -21,7 +21,7 @@ namespace Politica.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            object p = services.AddAutoMapper(config =>
+            services.AddAutoMapper(config =>
             {
                 config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
                 config.AddProfile(new AssemblyMappingProfile(typeof(IPoliticaDbContext).Assembly));
