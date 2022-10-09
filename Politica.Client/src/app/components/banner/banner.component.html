@@ -1,6 +1,22 @@
-<app-nav-menu></app-nav-menu>
-<article class="banner">
-  <div>
+<article class="banner position-relative">
+  <div class="banner-img position-absolute"></div>
+  <app-nav-menu>
+  </app-nav-menu>
 
+  <div class="container banner-content">
+    <div class="banner-ip">
+      <p>
+        IP:192.0.0.101
+      </p>
+    </div>
+    <div class="banner-text">
+      <h1 class="banner-title mb-3">Политика в кубе</h1>
+      <p class="banner-subtitle mb-5">Политический сервер без приватов</p>
+      <a href="#" class="btn btn-primary">Начать играть</a>
+      <p class="banner-arrowDown">
+        <fa-icon [icon]="arrowDown"></fa-icon>
+      </p>
+    </div>
   </div>
+
 </article>
