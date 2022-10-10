@@ -1,0 +1,38 @@
+.footer-1{
+  margin-top: 2040px;
+  background: url("src/assets/references/noise.jpg");
+  padding: 22px 0 32px;
+}
+
+.social-media{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.social-media img{
+  margin: 0 18px;
+
+  height: 26px;
+  width: 26px;
+}
+
+.footer-menu{
+  max-width: 1076px;
+  margin: auto;
+}
+
+.footer-menu ul{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-1 .nav{
+  font-family: 'Raleway', "Raleway", serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #FFFFFF;
+}

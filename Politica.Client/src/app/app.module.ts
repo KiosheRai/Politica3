@@ -7,13 +7,15 @@ import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BannerComponent } from './components/banner/banner.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FooterOneComponent } from './components/footer-one/footer-one.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     BannerComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FooterOneComponent
   ],
   imports: [
     BrowserModule,
