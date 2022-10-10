@@ -8,6 +8,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BannerComponent } from './components/banner/banner.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { FooterOneComponent } from './components/footer-one/footer-one.component';
+import { FooterTwoComponent } from './components/footer-two/footer-two.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FooterOneComponent } from './components/footer-one/footer-one.component
     NavMenuComponent,
     BannerComponent,
     AboutUsComponent,
-    FooterOneComponent
+    FooterOneComponent,
+    FooterTwoComponent
   ],
   imports: [
     BrowserModule,

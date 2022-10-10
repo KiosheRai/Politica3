@@ -1,0 +1,16 @@
+.footer-2{
+  background: url("src/assets/references/noise.jpg");
+  padding: 10px 0 4px;
+}
+
+.footer-2-subtext{
+  text-align: center;
+  font-family: 'Roboto', "Raleway", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer-2-subtext fa-icon{
+  font-size: 16px;
+}
