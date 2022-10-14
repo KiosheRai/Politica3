@@ -28,5 +28,12 @@ export const TestData: IFraction[] = [
     coordinatesX: -1000,
     coordinatesY: 2000,
     owner: "Communist"
+  },
+  {
+    title: "Северо-восточное кладбище",
+    subtitle: "«хоронить - резать»",
+    coordinatesX: -3000,
+    coordinatesY: 2000,
+    owner: "Anapa"
   }
 ]

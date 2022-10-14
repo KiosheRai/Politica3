@@ -7,5 +7,5 @@ import { TestData as data} from './data/test-data'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  cards = data.filter((u, i) => i < 3)
+  cards = data.filter((u, i) => i < 12)
 }
