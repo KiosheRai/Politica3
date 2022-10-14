@@ -1,0 +1,21 @@
+.slider-title{
+  padding: 50px 0;
+
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: center;
+
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
+}
+
+.slider-content{
+  padding: 62px 0;
+}
+
+.slider-track{
+  display: flex;
+}
+

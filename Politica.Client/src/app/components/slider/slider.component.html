@@ -1,0 +1,9 @@
+<div class="slider">
+  <h3 class="slider-title">{{title}}</h3>
+  <div class="slider-content" [ngStyle]="{'background-image': 'url('+urlImg+')'}">
+    <div class="container slider-track">
+      <app-card *ngFor="let card of cards" [entity]="card">
+      </app-card>
+    </div>
+  </div>
+</div>

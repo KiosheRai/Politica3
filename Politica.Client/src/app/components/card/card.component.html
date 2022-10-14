@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-body">
+    <img src="assets/references/TestImg.jpg" class="mb-3" [alt]="entity.title">
+    <p class="card-title mb-3">{{entity.title}}</p>
+    <p class="card-subtitle mb-3">{{entity.subtitle}}</p>
+    <p class="card-title-owner mb-1">Основатель:</p>
+    <p class="card-owner">{{entity.owner}}</p>
+  </div>
+  <div class="card-footer">
+    <p class="card-coordinates mb-0">x{{entity.coordinatesX}} y{{entity.coordinatesY}}</p>
+
+    <a href="#"><img src="assets/icons/read-more.svg" alt="read more"></a>
+  </div>
+</div>
