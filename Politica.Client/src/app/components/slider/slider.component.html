@@ -1,6 +1,8 @@
 <div class="slider">
   <h3 class="slider-title mb-0">{{title}}</h3>
-  <div class="slider-content" [ngStyle]="{'background-image': 'url('+urlImg+')'}">
+  <div class="slider-content position-relative">
+    <div class="slider-img" [ngStyle]="{'background': 'url('+urlImg+')'}"></div>
+    <div class="slider-gradient"></div>
     <div class="container">
       <div class="keen-slider" #sliderRef>
         <app-card *ngFor="let card of cards, let i = index" class="keen-slider__slide" [entity]="card">

@@ -1,4 +1,4 @@
-.slider-title{
+.slider-title {
   padding: 50px 0;
 
   font-family: 'Press Start 2P', "Raleway", serif;
@@ -11,10 +11,28 @@
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
-.slider-content{
+.slider-content {
   padding: 70px 0;
 }
 
-.slider-track{
+.slider-img, .slider-gradient {
+  position: absolute;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.slider-img {
+  z-index: -100;
+}
+
+.slider-gradient {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  filter: blur(1px);
+  z-index: -90;
+}
+
+.slider-track {
   display: flex;
 }
