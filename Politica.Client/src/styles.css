@@ -3,14 +3,14 @@ body{
   color: #FFFFFF;
 }
 
-a{
+a, a:hover{
   text-decoration: none;
   color: inherit;
+  transition: .2s ease-in-out;
 }
 
 a:hover{
-  text-decoration: none;
-  color: inherit;
+  color: rgb(127, 123, 248);
 }
 
 .btn{
