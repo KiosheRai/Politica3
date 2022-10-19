@@ -1,0 +1,54 @@
+.rule-text{
+  padding: 56px 0;
+}
+
+fa-icon{
+  font-size: 40px;
+}
+
+h4{
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+
+  letter-spacing: -0.1em;
+  text-transform: uppercase;
+
+  margin-bottom: 3rem;
+}
+
+h5{
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+
+  letter-spacing: -0.1em;
+  margin-bottom: 2rem;
+}
+
+p{
+  font-family: 'Raleway',"Raleway", serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+
+  margin-bottom: 1rem;
+}
+
+.chapter{
+  max-width: 1076px;
+  margin: auto;
+}
+
+.chapter-icon{
+  margin-bottom: 1rem;
+}
+
+.chapter-point{
+  margin-bottom: 3rem;
+}

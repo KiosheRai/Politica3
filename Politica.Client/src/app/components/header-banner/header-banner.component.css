@@ -1,0 +1,33 @@
+.header-banner{
+  margin-top: 16px;
+  padding: 50px 0;
+}
+
+.header-banner-img, .header-banner-gradient {
+  position: absolute;
+  top: 0;
+
+  height: 100%;
+  width: 100%;
+}
+
+.header-banner-img {
+  z-index: -100;
+  filter: blur(1px);
+}
+
+.header-banner-gradient {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+  z-index: -90;
+}
+
+h3{
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+
+  text-align: center;
+  letter-spacing: -0.1em;
+}

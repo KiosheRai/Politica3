@@ -1,18 +1,18 @@
 .slider-title {
-  padding: 50px 0;
+  padding: 40px 0;
 
   font-family: 'Press Start 2P', "Raleway", serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
-  line-height: 36px;
+  font-size: 28px;
+  line-height: 28px;
   text-align: center;
 
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 .slider-content {
-  padding: 70px 0;
+  padding: 50px 0;
 }
 
 .slider-img, .slider-gradient {
@@ -25,11 +25,11 @@
 
 .slider-img {
   z-index: -100;
+  filter: blur(1px);
 }
 
 .slider-gradient {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
-  filter: blur(1px);
   z-index: -90;
 }
 

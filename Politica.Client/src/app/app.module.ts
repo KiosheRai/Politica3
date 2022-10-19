@@ -12,6 +12,10 @@ import { FooterTwoComponent } from './components/footer-two/footer-two.component
 import { SliderComponent } from './components/slider/slider.component';
 import { CardComponent } from './components/card/card.component';
 import { HowToStartComponent } from './components/how-to-start/how-to-start.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { RulesPageComponent } from './pages/rules-page/rules-page.component';
+import { HeaderBannerComponent } from './components/header-banner/header-banner.component';
+import { ListItemsComponent } from './components/list-items/list-items.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import { HowToStartComponent } from './components/how-to-start/how-to-start.comp
     FooterTwoComponent,
     SliderComponent,
     CardComponent,
-    HowToStartComponent
+    HowToStartComponent,
+    HomePageComponent,
+    RulesPageComponent,
+    HeaderBannerComponent,
+    ListItemsComponent
   ],
   imports: [
     BrowserModule,
