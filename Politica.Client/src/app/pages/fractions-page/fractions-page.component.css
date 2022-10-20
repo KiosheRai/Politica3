@@ -1,0 +1,16 @@
+.fractions{
+  padding: 50px 0;
+}
+
+.fractions-text{
+  max-width: 636px;
+  margin: auto;
+
+  font-family: 'Raleway', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  text-align: center;
+}

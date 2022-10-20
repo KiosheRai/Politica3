@@ -1,6 +1,6 @@
 .footer-1{
   background: url("src/assets/references/noise.jpg");
-  padding: 22px 0 32px;
+  padding: 18px 0 32px;
 }
 
 .social-media{
@@ -12,8 +12,8 @@
 .social-media img{
   margin: 0 18px;
 
-  height: 26px;
-  width: 26px;
+  height: 24px;
+  width: 24px;
 }
 
 .footer-menu{

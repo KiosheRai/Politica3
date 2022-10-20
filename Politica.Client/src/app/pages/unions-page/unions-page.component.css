@@ -1,0 +1,16 @@
+.unions{
+  padding: 50px 0;
+}
+
+.unions-text{
+  max-width: 856px;
+  margin: auto;
+
+  font-family: 'Raleway', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  text-align: center;
+}

@@ -1,0 +1,16 @@
+<app-nav-menu></app-nav-menu>
+<app-header-banner [text]="'Союзы'" [urlImg]="'assets/references/banner.jpg'"></app-header-banner>
+<div class="container unions">
+  <div class="unions-text mb-5">
+    <p>
+      Союзы объединяют несколько фракций. При этом, фракции могут состоять в нескольких союзах одновременно. Союзы могут
+      иметь собственные правила, символику и территорию, не принадлежащую ни одной из фракций внутри союза, а также
+      могут участвовать в войнах.
+    </p>
+    <p class="mb-4">Любые фракции могут создать собвтенный союз</p>
+    <a class="btn btn-primary">Создать фракцию</a>
+  </div>
+  <div class="row">
+    <app-card class="col-12 col-md-6 col-lg-4 mb-4" *ngFor="let card of cards" [entity]="card"></app-card>
+  </div>
+</div>

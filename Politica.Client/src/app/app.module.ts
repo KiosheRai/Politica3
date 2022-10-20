@@ -16,6 +16,8 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RulesPageComponent } from './pages/rules-page/rules-page.component';
 import { HeaderBannerComponent } from './components/header-banner/header-banner.component';
 import { ListItemsComponent } from './components/list-items/list-items.component';
+import { FractionsPageComponent } from './pages/fractions-page/fractions-page.component';
+import { UnionsPageComponent } from './pages/unions-page/unions-page.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ListItemsComponent } from './components/list-items/list-items.component
     HomePageComponent,
     RulesPageComponent,
     HeaderBannerComponent,
-    ListItemsComponent
+    ListItemsComponent,
+    FractionsPageComponent,
+    UnionsPageComponent
   ],
   imports: [
     BrowserModule,
