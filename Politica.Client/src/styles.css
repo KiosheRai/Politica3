@@ -18,9 +18,8 @@ a:hover{
   border: none;
 }
 
-.btn-primary{
-  width: fit-content;
-
+.btn-primary,
+.btn-secondary{
   padding: 18px 36px;
   font-family: 'Raleway', "Raleway", serif;
   font-style: normal;
@@ -30,12 +29,26 @@ a:hover{
 
   color: #FFFFFF;
 
+  border-radius: 8px;
+}
+
+.btn-primary{
   background: rgba(127, 123, 248, 0.8);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 8px;
+}
+
+.btn-secondary{
+  background: none;
+  text-decoration: underline;
 }
 
 .btn:first-child:hover, :not(.btn-check)+.btn:hover{
   background: rgba(127, 123, 248, 1);
   border: none;
+}
+
+.btn-secondary:hover{
+  text-decoration: underline;
+  background: none !important;
+  color: rgba(127, 123, 248, 1) !important;
 }

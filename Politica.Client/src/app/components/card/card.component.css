@@ -1,21 +1,23 @@
 .card {
+  padding: 16px;
   border: 1px solid transparent;
   border-radius: 10px;
   background: rgb(35, 35, 35);
 }
 
 .card-body {
-  padding-bottom: 10px;
+  padding: 0;
 }
 
 .card-body img {
-  width: 242px;
-  height: 242px;
+  width: 100%;
+  height: 230px;
 
   overflow: hidden;
-  border-radius: 50%;
+  border-radius: 8px 8px 0 0;
   display: block;
-  margin: auto;
+
+  margin-bottom: 20px;
 }
 
 .card-title {
@@ -27,7 +29,7 @@
   font-size: 18px;
   line-height: 28px;
 
-  text-align: center;
+  margin-bottom: 12px;
 }
 
 .card-subtitle {
@@ -37,9 +39,9 @@
   font-size: 14px;
   line-height: 16px;
 
-  text-align: center;
   letter-spacing: 0.05em;
 
+  margin-bottom: 32px;
   color: #899599;
 }
 
@@ -50,7 +52,6 @@
   font-size: 14px;
   line-height: 24px;
 
-  text-align: center;
   letter-spacing: 0.05em;
 
   color: #7E7AF5;
@@ -63,7 +64,6 @@
   font-size: 14px;
   line-height: 24px;
 
-  text-align: center;
   letter-spacing: 0.05em;
 }
 
@@ -71,7 +71,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4px 34px 20px;
+  padding: 36px 0 16px;
   border: none;
 }
 
@@ -85,8 +85,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 4px;
-
-  text-align: center;
 
   color: rgb(113, 124, 237);
 }

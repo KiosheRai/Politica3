@@ -24,7 +24,7 @@ export class SliderComponent {
         loop: true,
         slides: {
           perView: 3,
-          spacing: 76,
+          spacing: 32,
         },
         defaultAnimation: {
           duration: 2000

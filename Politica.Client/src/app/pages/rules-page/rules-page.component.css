@@ -27,7 +27,7 @@ h5{
   line-height: 100%;
 
   letter-spacing: -0.1em;
-  margin-bottom: 2rem;
+  margin-bottom: 1.7rem;
 }
 
 p{
@@ -38,6 +38,8 @@ p{
   line-height: 130%;
 
   margin-bottom: 1rem;
+
+  color: rgb(233, 233, 233);
 }
 
 .chapter{
