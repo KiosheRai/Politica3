@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
@@ -6,14 +6,7 @@ import { faHome } from '@fortawesome/free-solid-svg-icons'
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
 })
-export class NavMenuComponent implements OnInit {
+export class NavMenuComponent {
 
   homeIcon = faHome
-
-  constructor() { }
-
-  ngOnInit(): void {
-
-  }
-
 }

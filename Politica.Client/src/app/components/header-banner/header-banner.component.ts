@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-header-banner',
@@ -6,7 +6,6 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./header-banner.component.css']
 })
 export class HeaderBannerComponent {
-
   @Input() text: string
   @Input() urlImg: string
 }

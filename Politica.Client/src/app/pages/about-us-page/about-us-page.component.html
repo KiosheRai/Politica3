@@ -1,0 +1,9 @@
+<app-nav-menu></app-nav-menu>
+<app-header-banner [text]="'О нас'" [urlImg]="'assets/references/banner.jpg'"></app-header-banner>
+<app-tiles></app-tiles>
+<div class="admins-cards container">
+    <div class="row">
+      <app-card-admin class="col-4" *ngFor="let admin of admins" [entity]="admin">
+      </app-card-admin>
+    </div>
+</div>

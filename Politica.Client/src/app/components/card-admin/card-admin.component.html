@@ -1,0 +1,16 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <img src="assets/references/TestImg.jpg" [alt]="entity.name">
+    <p class="card-name mb-0">{{entity.name}}</p>
+    <p class="card-post mb-0">{{entity.post}}</p>
+    <p class="card-description mb-0">{{entity.description}}</p>
+  </div>
+  <div class="card-footer">
+    <a href="{{entity.urlTelegram}}" target="_blank">
+      <img src="assets/icons/telegram.svg" alt="telegram">
+    </a>
+    <a href="{{entity.urlVK}}" target="_blank">
+      <img src="assets/icons/vk.svg" alt="vk">
+    </a>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {IFraction} from "../../models/ifraction";
 
 @Component({
@@ -6,13 +6,6 @@ import {IFraction} from "../../models/ifraction";
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit {
-
+export class CardComponent {
   @Input() entity : IFraction
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

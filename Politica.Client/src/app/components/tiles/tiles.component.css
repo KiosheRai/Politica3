@@ -1,0 +1,46 @@
+.tiles{
+  padding: 46px 0;
+}
+
+.tiles-header {
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+
+  text-align: center;
+  letter-spacing: -0.1em;
+
+  margin-bottom: 40px;
+}
+
+.tile{
+  height: 100%;
+  padding: 24px;
+  background: rgb(68, 71, 68);
+  border-radius: 12px;
+}
+
+.tile h5{
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+
+  margin-bottom: 26px;
+  color: #7E7AF5;
+}
+
+.tile p{
+  font-family: 'Raleway', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.tiles-content .col-6{
+  margin-bottom: 15px;
+}

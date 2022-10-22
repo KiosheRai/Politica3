@@ -18,6 +18,9 @@ import { HeaderBannerComponent } from './components/header-banner/header-banner.
 import { ListItemsComponent } from './components/list-items/list-items.component';
 import { FractionsPageComponent } from './pages/fractions-page/fractions-page.component';
 import { UnionsPageComponent } from './pages/unions-page/unions-page.component';
+import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.component';
+import { TilesComponent } from './components/tiles/tiles.component';
+import { CardAdminComponent } from './components/card-admin/card-admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { UnionsPageComponent } from './pages/unions-page/unions-page.component';
     HeaderBannerComponent,
     ListItemsComponent,
     FractionsPageComponent,
-    UnionsPageComponent
+    UnionsPageComponent,
+    AboutUsPageComponent,
+    TilesComponent,
+    CardAdminComponent
   ],
   imports: [
     BrowserModule,
