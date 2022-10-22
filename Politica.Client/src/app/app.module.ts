@@ -21,6 +21,8 @@ import { UnionsPageComponent } from './pages/unions-page/unions-page.component';
 import { AboutUsPageComponent } from './pages/about-us-page/about-us-page.component';
 import { TilesComponent } from './components/tiles/tiles.component';
 import { CardAdminComponent } from './components/card-admin/card-admin.component';
+import { FeedbackPageComponent } from './pages/feedback-page/feedback-page.component';
+import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { CardAdminComponent } from './components/card-admin/card-admin.component
     UnionsPageComponent,
     AboutUsPageComponent,
     TilesComponent,
-    CardAdminComponent
+    CardAdminComponent,
+    FeedbackPageComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+.not-found-content{
+  padding: 120px 0;
+}
+
+h3{
+  font-family: 'Press Start 2P', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+
+  text-align: center;
+  letter-spacing: -0.1em;
+
+  color: #FFFFFF;
+  text-shadow: -1px 0 rgb(96, 94, 181), 0 1px rgb(96, 94, 181), 1px 0 rgb(96, 94, 181), 0 -1px rgb(96, 94, 181);
+}

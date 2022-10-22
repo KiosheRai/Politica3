@@ -1,0 +1,21 @@
+.feedback{
+  padding: 70px 0;
+}
+
+.feedback-title{
+  font-family: 'Raleway', "Raleway", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  text-align: center;
+}
+
+.feedback-subtitle{
+  padding: 60px 0;
+  display: flex;
+  justify-content: space-between;
+  max-width: 450px;
+  margin: auto;
+}

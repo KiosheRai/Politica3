@@ -19,8 +19,9 @@ a:hover{
 }
 
 .btn-primary,
-.btn-secondary{
-  padding: 18px 36px;
+.btn-secondary,
+.btn-info{
+  padding: 18px 64px;
   font-family: 'Raleway', "Raleway", serif;
   font-style: normal;
   font-weight: 600;
@@ -39,6 +40,11 @@ a:hover{
 
 .btn-secondary{
   background: none;
+  outline: 1px rgba(127, 123, 248, 0.8) solid;
+}
+
+.btn-info{
+  background: none;
   text-decoration: underline;
 }
 
@@ -47,7 +53,7 @@ a:hover{
   border: none;
 }
 
-.btn-secondary:hover{
+.btn-info:hover{
   text-decoration: underline;
   background: none !important;
   color: rgba(127, 123, 248, 1) !important;

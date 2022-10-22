@@ -6,14 +6,17 @@ import {FractionsPageComponent} from "./pages/fractions-page/fractions-page.comp
 import {UnionsPageComponent} from "./pages/unions-page/unions-page.component";
 import {AboutUsComponent} from "./components/about-us/about-us.component";
 import {AboutUsPageComponent} from "./pages/about-us-page/about-us-page.component";
+import {FeedbackPageComponent} from "./pages/feedback-page/feedback-page.component";
+import {NotFoundPageComponent} from "./pages/not-found-page/not-found-page.component";
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'rules', component: RulesPageComponent },
   { path: 'fractions', component: FractionsPageComponent },
   { path: 'unions', component: UnionsPageComponent },
-  { path: 'about-us', component: AboutUsPageComponent }
-
+  { path: 'about-us', component: AboutUsPageComponent },
+  { path: 'feedback', component: FeedbackPageComponent },
+  { path: '**', component: NotFoundPageComponent}
 ];
 
 @NgModule({
