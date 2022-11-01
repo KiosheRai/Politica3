@@ -1,0 +1,31 @@
+<app-nav-menu></app-nav-menu>
+<app-header-banner [text]="entity.title" [urlImg]="'assets/references/banner.jpg'"></app-header-banner>
+<div class="fraction">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 info-block">
+        <div class="owner-block">
+          <h4>Основатель:</h4>
+          <p>{{entity.owner}}</p>
+        </div>
+        <div class="players-block">
+          <h4>Состав:</h4>
+          <p>{{entity.owner}}</p>
+        </div>
+        <div class="coordinates-block">
+          <h4>Координаты:</h4>
+          <p>x{{entity.coordinatesX}} z{{entity.coordinatesY}}</p>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="fraction-image">
+          <img src="assets/references/TestImg.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-12 mt-4">
+        <h4>Описание</h4>
+        <p class="fraction-description">{{entity.subtitle}}</p>
+      </div>
+    </div>
+  </div>
+</div>

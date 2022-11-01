@@ -23,6 +23,7 @@ import { TilesComponent } from './components/tiles/tiles.component';
 import { CardAdminComponent } from './components/card-admin/card-admin.component';
 import { FeedbackPageComponent } from './pages/feedback-page/feedback-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { FractionPageComponent } from './pages/fraction-page/fraction-page.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
     TilesComponent,
     CardAdminComponent,
     FeedbackPageComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    FractionPageComponent
   ],
   imports: [
     BrowserModule,

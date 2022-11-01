@@ -14,14 +14,18 @@ export class SliderComponent {
 
   // @ts-ignore
   slider: KeenSliderInstance
+  isLoopOn = false
 
   @Input() title: string
   @Input() cards: any[]
   @Input() urlImg: string
 
   ngAfterViewInit() {
+    if(this.cards.length > 3){
+      this.isLoopOn = false
+    }
     this.slider = new KeenSlider(this.sliderRef.nativeElement, {
-        loop: true,
+        loop: this.isLoopOn,
         slides: {
           perView: 3,
           spacing: 32,

@@ -1,14 +1,16 @@
 <div class="card">
   <div class="card-body">
-    <img src="assets/references/TestImg.jpg" [alt]="entity.title">
-    <p class="card-title">{{entity.title}}</p>
-    <p class="card-subtitle">{{entity.subtitle}}</p>
+    <img src="assets/references/TestImg.jpg" [alt]="fractionCard.title">
+    <p class="card-title">{{fractionCard.title}}</p>
+    <p class="card-subtitle">
+      {{fractionCard.subtitle}}
+    </p>
     <p class="card-title-owner mb-0">Основатель:</p>
-    <p class="card-owner mb-0">{{entity.owner}}</p>
+    <p class="card-owner mb-0">{{fractionCard.owner}}</p>
   </div>
   <div class="card-footer">
-    <p class="card-coordinates mb-0">x{{entity.coordinatesX}} y{{entity.coordinatesY}}</p>
+    <p class="card-coordinates mb-0">x{{fractionCard.coordinatesX}} y{{fractionCard.coordinatesY}}</p>
 
-    <a href="#"><img src="assets/icons/read-more.svg" alt="read more"></a>
+    <a [routerLink]="'fractions/'+fractionCard.id"><img src="assets/icons/read-more.svg" alt="read more"></a>
   </div>
 </div>
