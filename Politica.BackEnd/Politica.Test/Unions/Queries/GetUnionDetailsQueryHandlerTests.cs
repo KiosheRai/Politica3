@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Politica.Application.Unions.Queries.GetUnionDetails;
+using Politica.Domain;
 using Politica.Persistence;
 using Politica.Test.Common;
 using Shouldly;
@@ -36,7 +37,8 @@ namespace Politica.Test.Unions.Queries
             result.ShouldBeOfType<UnionDetailsVm>();
             result.Title.ShouldBe("UnionForDetails");
             result.Description.ShouldBe("Описание");
-            result.Coordinates.ShouldBe("321 312");
+            result.CoordinateX.ShouldBe(123);
+            result.CoordinateZ.ShouldBe(123);
             result.OwnerId.ShouldBe(PoliticaContextFactory.PlayerFractionOwner);
         }
     }

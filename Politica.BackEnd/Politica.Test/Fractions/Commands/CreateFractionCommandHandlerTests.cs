@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Politica.Application.Common.Exceptions;
 using Politica.Application.Fractions.Commands.CreateFraction;
+using Politica.Domain;
 using Politica.Test.Common;
 using System;
 using System.Collections.Generic;
@@ -17,17 +18,19 @@ namespace Politica.Test.Fractions.Commands
         {
             //Arrange
             var handler = new CreateFractionCommandHandler(context);
-            var Title = "Орден креста";
-            var Description = "Описание";
-            var Coordinates = "2 2";
+            var title = "Орден креста";
+            var description = "Описание";
+            var coordinateX = 123;
+            var coordinateZ = 322;
 
             //Act
             var Id = await handler.Handle(
                 new CreateFractionCommand
                 {
-                    Title = Title,
-                    Description = Description,
-                    Coordinates = Coordinates,
+                    Title = title,
+                    Description = description,
+                    CoordinateX = coordinateX,
+                    CoordinateZ = coordinateZ,
                     OwnerId = PoliticaContextFactory.PlayerOne,
                     Players = null,
                 },
@@ -37,9 +40,10 @@ namespace Politica.Test.Fractions.Commands
             Assert.NotNull(
                 await context.Fractions.SingleOrDefaultAsync(x =>
                 x.Id == Id
-                && x.Title == Title
-                && x.Description == Description
-                && x.Coordinates == Coordinates
+                && x.Title == title
+                && x.Description == description
+                && x.CoordinateX == coordinateX
+                && x.CoordinateZ == coordinateZ
                 && x.OwnerId == PoliticaContextFactory.PlayerOne));
         }
 
@@ -50,7 +54,8 @@ namespace Politica.Test.Fractions.Commands
             var handler = new CreateFractionCommandHandler(context);
             var Title = "Орден креста";
             var Description = "Описание";
-            var Coordinates = "2 2";
+            var coordinateX = 123;
+            var coordinateZ = 322;
 
             //Act
             var Id = await handler.Handle(
@@ -58,7 +63,8 @@ namespace Politica.Test.Fractions.Commands
                 {
                     Title = Title,
                     Description = Description,
-                    Coordinates = Coordinates,
+                    CoordinateX = coordinateX,
+                    CoordinateZ = coordinateZ,
                     OwnerId = PoliticaContextFactory.PlayerOne,
                     Players = new List<Guid> { PoliticaContextFactory.PlayerForDetails },
                 },
@@ -70,7 +76,8 @@ namespace Politica.Test.Fractions.Commands
                 x.Id == Id
                 && x.Title == Title
                 && x.Description == Description
-                && x.Coordinates == Coordinates
+                && x.CoordinateX == coordinateX
+                && x.CoordinateZ == coordinateZ
                 && x.OwnerId == PoliticaContextFactory.PlayerOne));
         }
 
@@ -81,7 +88,9 @@ namespace Politica.Test.Fractions.Commands
             var handler = new CreateFractionCommandHandler(context);
             var Title = "Орден креста";
             var Description = "Описание";
-            var Coordinates = "2 2";
+            var coordinateX = 123;
+            var coordinateZ = 322;
+
             IEnumerable<Guid> players = new List<Guid>() {
                 Guid.NewGuid(),
                 Guid.NewGuid()
@@ -97,7 +106,8 @@ namespace Politica.Test.Fractions.Commands
                     {
                         Title = Title,
                         Description = Description,
-                        Coordinates = Coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = PoliticaContextFactory.PlayerOne,
                         Players = players,
                     },
@@ -112,7 +122,8 @@ namespace Politica.Test.Fractions.Commands
             var handler = new CreateFractionCommandHandler(context);
             var Title = "Орден креста";
             var Description = "Описание";
-            var Coordinates = "2 2";
+            var coordinateX = 123;
+            var coordinateZ = 322;
 
             //Act
 
@@ -124,7 +135,8 @@ namespace Politica.Test.Fractions.Commands
                     {
                         Title = Title,
                         Description = Description,
-                        Coordinates = Coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = Guid.NewGuid(),
                         Players = null,
                     },

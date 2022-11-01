@@ -29,7 +29,7 @@ namespace Politica.Test.Unions.Commands
             Assert.Null(
                 await context.Unions.SingleOrDefaultAsync(x =>
                 x.Id == PoliticaContextFactory.UnionForDelete
-                && x.IsDeleted == false));
+                && !x.IsDeleted));
         }
 
         [Fact]

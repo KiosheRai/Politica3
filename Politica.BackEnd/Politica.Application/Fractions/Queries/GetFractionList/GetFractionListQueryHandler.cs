@@ -23,7 +23,7 @@ namespace Politica.Application.Fractions.Queries.GetFractionList
         {
             var Query = await _dbContext.Fractions
                 .ProjectTo<FractionLookUpDto>(_mapper.ConfigurationProvider)
-                .Where(x => x.IsDeleted == false)
+                .Where(x => !x.IsDeleted)
                 .ToListAsync(cancellationToken);
 
             return new FractionListVm { Fractions = Query };

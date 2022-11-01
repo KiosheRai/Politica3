@@ -34,7 +34,7 @@ namespace Politica.Application.Unions.Commands.UpdateFractions
             {
                 foreach (var fractionId in request.Fractions)
                 {
-                    entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
+                    _ = entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
                         ?? throw new NotFoundException(nameof(Fraction), fractionId));
                 }
             }

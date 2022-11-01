@@ -2,6 +2,7 @@
 using Politica.Application.Common.Mappings;
 using Politica.Application.Fractions.Commands.UpdateFraction;
 using Politica.Application.Players.Commands.UpdatePlayer;
+using Politica.Domain;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -16,7 +17,9 @@ namespace Politica.WebApi.DataTransferObject.PlayerDto
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Coordinates { get; set; }
+        public double CoordinateX { get; set; }
+        [Required]
+        public double CoordinateZ { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
 
@@ -29,8 +32,10 @@ namespace Politica.WebApi.DataTransferObject.PlayerDto
                     opt => opt.MapFrom(fractionDto => fractionDto.Title))
                 .ForMember(fractionCommand => fractionCommand.Description,
                     opt => opt.MapFrom(fractionDto => fractionDto.Description))
-                .ForMember(fractionCommand => fractionCommand.Coordinates,
-                    opt => opt.MapFrom(fractionDto => fractionDto.Coordinates))
+                .ForMember(fractionCommand => fractionCommand.CoordinateX,
+                    opt => opt.MapFrom(fractionDto => fractionDto.CoordinateX))
+                .ForMember(fractionCommand => fractionCommand.CoordinateZ,
+                    opt => opt.MapFrom(fractionDto => fractionDto.CoordinateZ))
                 .ForMember(fractionCommand => fractionCommand.OwnerId,
                     opt => opt.MapFrom(fractionDto => fractionDto.OwnerId));
         }

@@ -29,7 +29,7 @@ namespace Politica.Test.Fractions.Commands
             Assert.Null(
                 await context.Fractions.SingleOrDefaultAsync(x =>
                 x.Id == PoliticaContextFactory.FractionForDelete
-                && x.IsDeleted == false));
+                && !x.IsDeleted));
         }
 
         [Fact]

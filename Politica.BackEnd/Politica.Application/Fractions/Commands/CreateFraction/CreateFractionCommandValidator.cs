@@ -12,8 +12,6 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
             RuleFor(createFractionCommand =>
                 createFractionCommand.Description).NotEmpty();
             RuleFor(createFractionCommand =>
-                createFractionCommand.Coordinates).NotEmpty();
-            RuleFor(createFractionCommand =>
                 createFractionCommand.OwnerId).NotEqual(Guid.Empty);
         }
     }

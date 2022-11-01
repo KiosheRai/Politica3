@@ -15,8 +15,6 @@ namespace Politica.Application.Fractions.Commands.UpdateFraction
             RuleFor(updateFractionCommand  =>
                 updateFractionCommand.Description).NotEmpty();
             RuleFor(updateFractionCommand  =>
-                updateFractionCommand.Coordinates).NotEmpty();
-            RuleFor(updateFractionCommand  =>
                 updateFractionCommand.OwnerId).NotEqual(Guid.Empty);
         }
 

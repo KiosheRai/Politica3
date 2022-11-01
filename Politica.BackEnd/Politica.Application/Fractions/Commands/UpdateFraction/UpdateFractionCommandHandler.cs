@@ -29,7 +29,8 @@ namespace Politica.Application.Fractions.Commands.UpdateFraction
 
             entity.Title = request.Title;
             entity.Description = request.Description;
-            entity.Coordinates = request.Coordinates;
+            entity.CoordinateX = request.CoordinateX;
+            entity.CoordinateZ = request.CoordinateZ;
             entity.OwnerId = OwnerId.Id;
 
             await _dbContext.SaveChangesAsync(cancellationToken);

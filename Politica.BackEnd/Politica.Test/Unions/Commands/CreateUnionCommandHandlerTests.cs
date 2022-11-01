@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Politica.Application.Common.Exceptions;
 using Politica.Application.Unions.Commands.CreateUnion;
+using Politica.Domain;
 using Politica.Test.Common;
 using System;
 using System.Collections.Generic;
@@ -19,7 +20,8 @@ namespace Politica.Test.Unions.Commands
             var handler = new CreateUnionCommandHandler(context);
             var title = "Союз";
             var description = "Описание";
-            var coordinates = "3 3";
+            var coordinateX = 3;
+            var coordinateZ = 3;
 
             //Act
             var Id = await handler.Handle(
@@ -27,7 +29,8 @@ namespace Politica.Test.Unions.Commands
                 {
                     Title = title,
                     Description = description,
-                    Coordinates = coordinates,
+                    CoordinateX = coordinateX,
+                    CoordinateZ = coordinateZ,
                     OwnerId = PoliticaContextFactory.PlayerOne,
                     Fractions = null,
                 },
@@ -39,7 +42,8 @@ namespace Politica.Test.Unions.Commands
                 x.Id == Id
                 && x.Title == title
                 && x.Description == description
-                && x.Coordinates == coordinates
+                && x.CoordinateX == coordinateX
+                && x.CoordinateZ == coordinateZ
                 && x.OwnerId == PoliticaContextFactory.PlayerOne));
         }
 
@@ -50,7 +54,8 @@ namespace Politica.Test.Unions.Commands
             var handler = new CreateUnionCommandHandler(context);
             var title = "Союз";
             var description = "Описание";
-            var coordinates = "2 2";
+            var coordinateX = 3;
+            var coordinateZ = 3;
 
             //Act
             var Id = await handler.Handle(
@@ -58,7 +63,8 @@ namespace Politica.Test.Unions.Commands
                 {
                     Title = title,
                     Description = description,
-                    Coordinates = coordinates,
+                    CoordinateX = coordinateX,
+                    CoordinateZ = coordinateZ,
                     OwnerId = PoliticaContextFactory.PlayerOne,
                     Fractions = new List<Guid> { PoliticaContextFactory.FractionForDetails },
                 },
@@ -70,7 +76,8 @@ namespace Politica.Test.Unions.Commands
                 x.Id == Id
                 && x.Title == title
                 && x.Description == description
-                && x.Coordinates == coordinates
+                && x.CoordinateX == coordinateX
+                && x.CoordinateZ == coordinateZ
                 && x.OwnerId == PoliticaContextFactory.PlayerOne));
         }
 
@@ -81,7 +88,9 @@ namespace Politica.Test.Unions.Commands
             var handler = new CreateUnionCommandHandler(context);
             var title = "Союз";
             var description = "Описание";
-            var coordinates = "2 2";
+            var coordinateX = 3;
+            var coordinateZ = 3;
+
             IEnumerable<Guid> Unions = new List<Guid>() {
                 Guid.NewGuid(),
                 Guid.NewGuid()
@@ -97,7 +106,8 @@ namespace Politica.Test.Unions.Commands
                     {
                         Title = title,
                         Description = description,
-                        Coordinates = coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = PoliticaContextFactory.PlayerOne,
                         Fractions = Unions,
                     },
@@ -112,7 +122,8 @@ namespace Politica.Test.Unions.Commands
             var handler = new CreateUnionCommandHandler(context);
             var Title = "Союз";
             var Description = "Описание";
-            var Coordinates = "2 2";
+            var coordinateX = 3;
+            var coordinateZ = 3;
 
             //Act
 
@@ -124,7 +135,8 @@ namespace Politica.Test.Unions.Commands
                     {
                         Title = Title,
                         Description = Description,
-                        Coordinates = Coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = Guid.NewGuid(),
                         Fractions = null,
                     },

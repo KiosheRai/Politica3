@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Politica.Application.Fractions.Queries.GetFractionDetails;
+using Politica.Domain;
 using Politica.Persistence;
 using Politica.Test.Common;
 using Shouldly;
@@ -36,7 +37,8 @@ namespace Politica.Test.Fractions.Queries
             result.ShouldBeOfType<FractionDetailsVm>();
             result.Title.ShouldBe("FractionForDetails");
             result.Description.ShouldBe("Описание");
-            result.Coordinates.ShouldBe("1232 123");
+            result.CoordinateX.ShouldBe(123);
+            result.CoordinateZ.ShouldBe(321231);
             result.OwnerId.ShouldBe(PoliticaContextFactory.PlayerFractionOwner);
             result.Association.ShouldBe(null);
         }

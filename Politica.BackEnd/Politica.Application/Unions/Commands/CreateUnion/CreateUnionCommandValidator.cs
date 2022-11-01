@@ -13,8 +13,6 @@ namespace Politica.Application.Unions.Commands.CreateUnion
             RuleFor(createUnion =>
                 createUnion.Description).NotEmpty();
             RuleFor(createUnion =>
-                createUnion.Coordinates).NotEmpty();
-            RuleFor(createUnion =>
                 createUnion.OwnerId).NotEqual(Guid.Empty);
         }
     }

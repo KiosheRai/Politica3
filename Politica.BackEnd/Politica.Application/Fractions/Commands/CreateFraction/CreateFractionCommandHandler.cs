@@ -32,7 +32,7 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
             {
                 foreach (var playerId in request.Players)
                 {
-                    entities.Append(players.FirstOrDefault(x => x.Id == playerId)
+                    _ = entities.Append(players.FirstOrDefault(x => x.Id == playerId)
                         ?? throw new NotFoundException(nameof(Player), playerId));
                 }
             }
@@ -46,7 +46,8 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
                 Id = Guid.NewGuid(),
                 Title = request.Title,
                 Description = request.Description,
-                Coordinates = request.Coordinates,
+                CoordinateX = request.CoordinateX,
+                CoordinateZ = request.CoordinateZ,
                 OwnerId = owner.Id,
                 Players = entities,
                 Association = null,

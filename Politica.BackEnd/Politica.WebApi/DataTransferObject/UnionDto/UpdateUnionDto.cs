@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Politica.Application.Common.Mappings;
 using Politica.Application.Unions.Commands.UpdateUnion;
+using Politica.Domain;
 using System;
 using System.ComponentModel.DataAnnotations;
 
@@ -15,7 +16,9 @@ namespace Politica.WebApi.DataTransferObject.UnionDto
         [Required]
         public string Description { get; set; }
         [Required]
-        public string Coordinates { get; set; }
+        public double CoordinateX { get; set; }
+        [Required]
+        public double CoordinateZ { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
 
@@ -29,8 +32,10 @@ namespace Politica.WebApi.DataTransferObject.UnionDto
                     opt => opt.MapFrom(unionDto => unionDto.Title))
                 .ForMember(unionCommand => unionCommand.Description,
                     opt => opt.MapFrom(unionDto => unionDto.Description))
-                .ForMember(unionCommand => unionCommand.Coordinates,
-                    opt => opt.MapFrom(unionDto => unionDto.Coordinates))
+                .ForMember(unionCommand => unionCommand.CoordinateX,
+                    opt => opt.MapFrom(unionDto => unionDto.CoordinateX))
+                .ForMember(unionCommand => unionCommand.CoordinateZ,
+                    opt => opt.MapFrom(unionDto => unionDto.CoordinateZ))
                 .ForMember(unionCommand => unionCommand.OwnerId,
                     opt => opt.MapFrom(unionDto => unionDto.OwnerId));
         }

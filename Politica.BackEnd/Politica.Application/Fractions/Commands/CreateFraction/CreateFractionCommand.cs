@@ -9,7 +9,8 @@ namespace Politica.Application.Fractions.Commands.CreateFraction
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public string Coordinates { get; set; }
+        public double CoordinateX { get; set; }
+        public double CoordinateZ { get; set; }
         public virtual Guid OwnerId { get; set; }
         public virtual IEnumerable<Guid> Players { get; set; }
     }

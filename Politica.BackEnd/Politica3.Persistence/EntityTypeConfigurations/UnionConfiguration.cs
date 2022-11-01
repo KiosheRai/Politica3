@@ -12,7 +12,8 @@ namespace Politica.Persistence.EntityTypeConfigurations
             builder.HasIndex(union => union.Id).IsUnique();
             builder.Property(union => union.Title).HasMaxLength(50).IsRequired();
             builder.Property(union => union.Description).IsRequired();
-            builder.Property(union => union.Coordinates).IsRequired();
+            builder.Property(union => union.CoordinateX).IsRequired();
+            builder.Property(union => union.CoordinateZ).IsRequired();
             builder.Property(union => union.IsDeleted).HasDefaultValue(false);
         }
     }

@@ -23,7 +23,7 @@ namespace Politica.Application.Unions.Queries.GetUnionList
         {
             var Query = await _dbContext.Unions
                 .ProjectTo<UnionLookUpDto>(_mapper.ConfigurationProvider)
-                .Where(x => x.IsDeleted == false)
+                .Where(x => !x.IsDeleted)
                 .ToListAsync(cancellationToken);
 
             return new UnionListVm { Unions = Query };

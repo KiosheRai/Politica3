@@ -5,7 +5,7 @@ using System;
 
 namespace Politica.Test.Common
 {
-    public class PoliticaContextFactory
+    public static class PoliticaContextFactory
     {
         public static int AlreadyExistsHabitId = 1111;
 
@@ -111,7 +111,8 @@ namespace Politica.Test.Common
                     Id = FractionForAccessPlayer,
                     Title = "Вейшнория",
                     Description = "Описание",
-                    Coordinates = "123 123",
+                    CoordinateX = 123,
+                    CoordinateZ =  321,
                     Association = null,
                     OwnerId = PlayerFractionOwner,
                     Players = null,
@@ -122,7 +123,8 @@ namespace Politica.Test.Common
                     Id = FractionForDelete,
                     Title = "FractionForDelete",
                     Description = "Описание",
-                    Coordinates = "123 123",
+                    CoordinateX = 123,
+                    CoordinateZ = 321,
                     Association = null,
                     OwnerId = PlayerFractionOwner,
                     Players = null,
@@ -133,7 +135,8 @@ namespace Politica.Test.Common
                     Id = FractionForUpdate,
                     Title = "FractionForDelete",
                     Description = "Описание",
-                    Coordinates = "123 123",
+                    CoordinateX = 123,
+                    CoordinateZ = 321,
                     Association = null,
                     OwnerId = PlayerFractionOwner,
                     Players = null,
@@ -144,7 +147,8 @@ namespace Politica.Test.Common
                     Id = FractionForDetails,
                     Title = "FractionForDetails",
                     Description = "Описание",
-                    Coordinates = "1232 123",
+                    CoordinateX = 123,
+                    CoordinateZ = 321231,
                     Association = null,
                     OwnerId = PlayerFractionOwner,
                     Players = null,
@@ -158,7 +162,8 @@ namespace Politica.Test.Common
                     Id = UnionForDelete,
                     Title = "Союз",
                     Description = "Описание",
-                    Coordinates = "123 123",
+                    CoordinateX = 123,
+                    CoordinateZ = 321231,
                     OwnerId = PlayerFractionOwner,
                     Fractions = null,
                     IsDeleted = false
@@ -168,7 +173,8 @@ namespace Politica.Test.Common
                     Id = UnionForUpdate,
                     Title = "Союз",
                     Description = "Описание",
-                    Coordinates = "123 123",
+                    CoordinateX = 123,
+                    CoordinateZ = 331221,
                     OwnerId = PlayerFractionOwner,
                     Fractions = null,
                     IsDeleted = false
@@ -178,7 +184,8 @@ namespace Politica.Test.Common
                     Id = UnionForDetails,
                     Title = "UnionForDetails",
                     Description = "Описание",
-                    Coordinates = "321 312",
+                    CoordinateX = 123,
+                    CoordinateZ = 123,
                     OwnerId = PlayerFractionOwner,
                     Fractions = null,
                     IsDeleted = false

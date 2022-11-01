@@ -32,7 +32,7 @@ namespace Politica.Application.Unions.Commands.CreateUnion
             {
                 foreach (var fractionId in request.Fractions)
                 {
-                    entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
+                    _ = entities.Append(fractions.FirstOrDefault(x => x.Id == fractionId)
                         ?? throw new NotFoundException(nameof(Fraction), fractionId));
                 }
             }
@@ -46,7 +46,8 @@ namespace Politica.Application.Unions.Commands.CreateUnion
                 Id = Guid.NewGuid(),
                 Title = request.Title,
                 Description = request.Description,
-                Coordinates = request.Coordinates,
+                CoordinateX = request.CoordinateX,
+                CoordinateZ = request.CoordinateZ,
                 Fractions = fractions,
                 OwnerId = owner.Id,
                 IsDeleted = false

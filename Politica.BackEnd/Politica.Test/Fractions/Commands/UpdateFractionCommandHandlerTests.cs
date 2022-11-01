@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Politica.Application.Common.Exceptions;
 using Politica.Application.Fractions.Commands.UpdateFraction;
+using Politica.Domain;
 using Politica.Test.Common;
 using System;
 using System.Threading;
@@ -18,7 +19,8 @@ namespace Politica.Test.Fractions.Commands
             var handler = new UpdateFractionCommandHandler(context);
             var Title = "New Title";
             var Description = "New description";
-            var Coordinates = "100 100";
+            var coordinateX = 123;
+            var coordinateZ = 322;
 
             //Act
             await handler.Handle(
@@ -27,7 +29,8 @@ namespace Politica.Test.Fractions.Commands
                     Id = PoliticaContextFactory.FractionForUpdate,
                     Title = Title,
                     Description = Description,
-                    Coordinates = Coordinates,
+                    CoordinateX = coordinateX,
+                    CoordinateZ = coordinateZ,
                     OwnerId = PoliticaContextFactory.PlayerFractionOwner
                 },
                 CancellationToken.None);
@@ -38,7 +41,8 @@ namespace Politica.Test.Fractions.Commands
                 x.Id == PoliticaContextFactory.FractionForUpdate
                 && x.Title == Title
                 && x.Description == Description
-                && x.Coordinates == Coordinates
+                && x.CoordinateX == coordinateX
+                && x.CoordinateZ == coordinateZ
                 && x.OwnerId == PoliticaContextFactory.PlayerFractionOwner));
         }
 
@@ -49,7 +53,8 @@ namespace Politica.Test.Fractions.Commands
             var handler = new UpdateFractionCommandHandler(context);
             var Title = "New Title";
             var Description = "New description";
-            var Coordinates = "100 100";
+            var coordinateX = 100;
+            var coordinateZ = 100;
 
             //Act
 
@@ -61,7 +66,8 @@ namespace Politica.Test.Fractions.Commands
                         Id = Guid.NewGuid(),
                         Title = Title,
                         Description = Description,
-                        Coordinates = Coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = PoliticaContextFactory.PlayerFractionOwner
                     },
                 CancellationToken.None));
@@ -74,7 +80,8 @@ namespace Politica.Test.Fractions.Commands
             var handler = new UpdateFractionCommandHandler(context);
             var Title = "New Title";
             var Description = "New description";
-            var Coordinates = "100 100";
+            var coordinateX = 100;
+            var coordinateZ = 100;
 
             //Act
 
@@ -86,7 +93,8 @@ namespace Politica.Test.Fractions.Commands
                         Id = PoliticaContextFactory.FractionForUpdate,
                         Title = Title,
                         Description = Description,
-                        Coordinates = Coordinates,
+                        CoordinateX = coordinateX,
+                        CoordinateZ = coordinateZ,
                         OwnerId = Guid.NewGuid()
                     },
                 CancellationToken.None));

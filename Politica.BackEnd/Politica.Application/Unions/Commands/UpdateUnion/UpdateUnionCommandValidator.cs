@@ -15,8 +15,6 @@ namespace Politica.Application.Unions.Commands.UpdateUnion
             RuleFor(updateUnion =>
                 updateUnion.Description).NotEmpty();
             RuleFor(updateUnion =>
-                updateUnion.Coordinates).NotEmpty();
-            RuleFor(updateUnion =>
                 updateUnion.OwnerId).NotEqual(Guid.Empty);
         }
     }
